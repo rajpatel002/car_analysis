@@ -25,24 +25,6 @@ resources:
         - task_key: notebook_task
           notebook_task:
             notebook_path: ../src/car_analysis.ipynb
-        - task_key: python_wheel_task
-          depends_on:
-            - task_key: notebook_task
-          python_wheel_task:
-            package_name: first_bundle
-            entry_point: main
-            parameters:
-              - "--catalog"
-              - "${var.catalog}"
-              - "--schema"
-              - "${var.schema}"
-          environment_key: default
-        - task_key: refresh_pipeline
-          depends_on:
-            - task_key: notebook_task
-          pipeline_task:
-            pipeline_id: ${resources.pipelines.first_bundle_etl.id}
-
       environments:
         - environment_key: default
           spec:

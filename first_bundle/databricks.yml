@@ -44,3 +44,5 @@ targets:
     permissions:
       - user_name: patel.raj.020403@gmail.com
         level: CAN_MANAGE
+      - user_name: 007mailsender@gmail.com
+        level: CAN_VIEW
