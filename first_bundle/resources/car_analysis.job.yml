@@ -22,9 +22,12 @@ resources:
           default: ${var.schema}
 
       tasks:
-        - task_key: notebook_task
+        - task_key: car_analysis
           notebook_task:
             notebook_path: ../src/car_analysis.ipynb
+        - task_key: car_analysis1
+          notebook_task:
+            notebook_path: ../src/car_analysis1.ipynb
       environments:
         - environment_key: default
           spec:
