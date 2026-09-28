@@ -38,7 +38,10 @@ targets:
       - user_name: 007mailsender@gmail.com
         level: CAN_VIEW
   qa:
-    mode: qa
+    # mode: development
+    presets:
+      name_prefix: "[qa] "               # overrides the default "[dev user] " prefix
+      pipelines_development: false
     workspace:
       host: https://dbc-9dae8ca6-27d7.cloud.databricks.com
       # We explicitly deploy to /Workspace/Users/patel.raj.020403@gmail.com to make sure we only have a single copy.
@@ -46,6 +49,10 @@ targets:
     variables:
       catalog: car_data
       schema: qa
+    # resources:
+    #   pipelines:
+    #     first_bundle_etl:
+    #       name: first_bundle_etl_qa
     permissions:
       - user_name: patel.raj.020403@gmail.com
         level: CAN_MANAGE
