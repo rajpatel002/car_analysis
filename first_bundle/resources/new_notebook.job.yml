@@ -2,7 +2,7 @@
 
 resources:
   jobs:
-    car_analysis:
+    new_notebook:
       name: new_notebook
 
       trigger:
