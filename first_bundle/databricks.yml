@@ -37,6 +37,20 @@ targets:
         level: CAN_MANAGE
       - user_name: 007mailsender@gmail.com
         level: CAN_VIEW
+  qa:
+    mode: production
+    workspace:
+      host: https://dbc-9dae8ca6-27d7.cloud.databricks.com
+      # We explicitly deploy to /Workspace/Users/patel.raj.020403@gmail.com to make sure we only have a single copy.
+      root_path: /Workspace/Users/patel.raj.020403@gmail.com/.bundle/${bundle.name}/${bundle.target}
+    variables:
+      catalog: car_data
+      schema: qa
+    permissions:
+      - user_name: patel.raj.020403@gmail.com
+        level: CAN_MANAGE
+      - user_name: 007mailsender@gmail.com
+        level: CAN_VIEW
   prod:
     mode: production
     workspace:
